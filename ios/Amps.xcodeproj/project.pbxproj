@@ -10,6 +10,7 @@
 		AD07B4562D7F3740000AE675 /* amplify_outputs.json in Resources */ = {isa = PBXBuildFile; fileRef = AD07B4552D7F3740000AE675 /* amplify_outputs.json */; };
 		AD07B4592D7F4376000AE675 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B4582D7F4376000AE675 /* AWSCognitoAuthPlugin */; };
 		AD07B45C2D7F44D7000AE675 /* Authenticator in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B45B2D7F44D7000AE675 /* Authenticator */; };
+		AD07B4642D7F8C12000AE675 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B4632D7F8C12000AE675 /* AWSAPIPlugin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD07B4642D7F8C12000AE675 /* AWSAPIPlugin in Frameworks */,
 				AD07B45C2D7F44D7000AE675 /* Authenticator in Frameworks */,
 				AD07B4592D7F4376000AE675 /* AWSCognitoAuthPlugin in Frameworks */,
 			);
@@ -124,6 +126,7 @@
 			packageProductDependencies = (
 				AD07B4582D7F4376000AE675 /* AWSCognitoAuthPlugin */,
 				AD07B45B2D7F44D7000AE675 /* Authenticator */,
+				AD07B4632D7F8C12000AE675 /* AWSAPIPlugin */,
 			);
 			productName = JLDanceParty;
 			productReference = AD07B4192D7F3549000AE675 /* Amps.app */;
@@ -605,6 +608,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AD07B45A2D7F44D7000AE675 /* XCRemoteSwiftPackageReference "amplify-ui-swift-authenticator" */;
 			productName = Authenticator;
+		};
+		AD07B4632D7F8C12000AE675 /* AWSAPIPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD07B4572D7F4376000AE675 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSAPIPlugin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,0 +1,1 @@
+npx ampx generate graphql-client-code --format modelgen --model-target swift --out ios/Amps
