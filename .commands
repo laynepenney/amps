@@ -1,1 +1,8 @@
+# run web local
+npm run dev web
+
+# gen sandbox amplify_outputs.json
+npx ampx sandbox
+
+# swift codegen
 npx ampx generate graphql-client-code --format modelgen --model-target swift --out ios/Amps
