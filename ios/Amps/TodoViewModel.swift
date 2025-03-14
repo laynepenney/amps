@@ -5,12 +5,27 @@
 //  Created by Layne Penney on 3/10/25.
 //
 
-import Amplify
 import SwiftUI
+import Amplify
+import OrderedCollections
 
 @MainActor
-class TodoViewModel: ObservableObject {
-    @Published var todos: [Todo] = []
+@Observable
+class TodoViewModel {
+    var todos: [Todo] = []
+    private var _data: OrderedSet<Todo> = []
+    
+    private var onCreate = Subscription(.onCreate)
+    private var onDelete = Subscription(.onDelete)
+    private var onUpdate = Subscription(.onUpdate)
+    
+    deinit {
+        Task { [weak self] in
+            await self?.onCreate.cancel()
+            await self?.onDelete.cancel()
+            await self?.onUpdate.cancel()
+        }
+    }
 
     func createTodo() async {
         let creationTime = Temporal.DateTime.now()
@@ -25,7 +40,8 @@ class TodoViewModel: ObservableObject {
             switch result {
             case .success(let todo):
                 print("Successfully created todo: \(todo)")
-                todos.append(todo)
+                self._data.updateOrAppend(todo)
+                self.todos = self._data.elements
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
@@ -36,6 +52,28 @@ class TodoViewModel: ObservableObject {
         }
     }
     
+    private func update(_ todo: Todo) async {
+        self._data.updateOrAppend(todo)
+        self.todos = self._data.elements
+    }
+    
+    private func remove(_ todo: Todo) async {
+        self._data.remove(todo)
+        self.todos = self._data.elements
+    }
+    
+    func subscribe() {
+        onCreate.subscribe { [unowned self] todo in
+            await self.update(todo)
+        }
+        onDelete.subscribe { [unowned self] todo in
+            await self.remove(todo)
+        }
+        onUpdate.subscribe { [unowned self] todo in
+            await self.update(todo)
+        }
+    }
+    
     func listTodos() async {
         let request = GraphQLRequest<Todo>.list(Todo.self)
         do {
@@ -43,7 +81,8 @@ class TodoViewModel: ObservableObject {
             switch result {
             case .success(let todos):
                 print("Successfully retrieved list of todos: \(todos)")
-                self.todos = todos.elements
+                self._data = OrderedSet(todos)
+                self.todos = self._data.elements
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
@@ -57,12 +96,13 @@ class TodoViewModel: ObservableObject {
     func deleteTodos(indexSet: IndexSet) async {
         for index in indexSet {
             do {
-                let todo = todos[index]
+                let todo = self.todos[index]
                 let result = try await Amplify.API.mutate(request: .delete(todo))
                 switch result {
                 case .success(let todo):
                     print("Successfully deleted todo: \(todo)")
-                    todos.remove(at: index)
+                    self._data.remove(todo)
+                    self.todos = self._data.elements
                 case .failure(let error):
                     print("Got failed result with \(error.errorDescription)")
                 }
@@ -80,6 +120,8 @@ class TodoViewModel: ObservableObject {
             switch result {
             case .success(let todo):
                 print("Successfully updated todo: \(todo)")
+                self._data.updateOrAppend(todo)
+                self.todos = self._data.elements
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
@@ -87,6 +129,70 @@ class TodoViewModel: ObservableObject {
             print("Failed to updated todo: ", error)
         } catch {
             print("Unexpected error: \(error)")
+        }
+    }
+}
+
+extension Todo: Hashable, Equatable {
+    public static func == (lhs: Todo, rhs: Todo) -> Bool {
+        return lhs.id == rhs.id
+    }
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+    }
+}
+
+@MainActor
+struct Subscription {
+    let type: GraphQLSubscriptionType
+    let subscription: AmplifyAsyncThrowingSequence<GraphQLSubscriptionEvent<Todo>>
+    private var task: Task<Void, Error>?
+    
+    init(_ type: GraphQLSubscriptionType) {
+        let request: GraphQLRequest<Todo> = .subscription(of: Todo.self, type: type)
+        self.type = type
+        self.subscription = Amplify.API.subscribe(request: request)
+    }
+    
+    mutating func subscribe(_ callback: @escaping (Todo)async ->Void) -> Task<Void, Error> {
+        if let task = self.task {
+            return task
+        }
+        let task = Task { [self, callback] in
+            try await self.doSubscribe(callback)
+        }
+        self.task = task
+        return task
+    }
+    
+    func cancel() {
+        task?.cancel()
+        subscription.cancel()
+    }
+    
+    func isCancelled() -> Bool {
+        return subscription.isCancelled
+    }
+    
+    private func doSubscribe(_ callback: (Todo) async ->Void) async throws {
+        do {
+            for try await subscriptionEvent in subscription {
+                switch subscriptionEvent {
+                case .connection(let subscriptionConnectionState):
+                    print("Subscription \(type) connect state is \(subscriptionConnectionState)")
+                case .data(let result):
+                    switch result {
+                    case .success(let createdTodo):
+                        print("Successfully got \(type) todo from subscription: \(createdTodo)")
+                        await callback(createdTodo)
+                    case .failure(let error):
+                        print("Got failed result with \(error.errorDescription)")
+                    }
+                }
+            }
+        } catch {
+            print("Subscription has terminated with \(error)")
+            throw error
         }
     }
 }

@@ -11,6 +11,7 @@
 		AD07B4592D7F4376000AE675 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B4582D7F4376000AE675 /* AWSCognitoAuthPlugin */; };
 		AD07B45C2D7F44D7000AE675 /* Authenticator in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B45B2D7F44D7000AE675 /* Authenticator */; };
 		AD07B4642D7F8C12000AE675 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B4632D7F8C12000AE675 /* AWSAPIPlugin */; };
+		AD820AA72D7FDD93003EBB75 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = AD820AA62D7FDD93003EBB75 /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD820AA72D7FDD93003EBB75 /* OrderedCollections in Frameworks */,
 				AD07B4642D7F8C12000AE675 /* AWSAPIPlugin in Frameworks */,
 				AD07B45C2D7F44D7000AE675 /* Authenticator in Frameworks */,
 				AD07B4592D7F4376000AE675 /* AWSCognitoAuthPlugin in Frameworks */,
@@ -127,6 +129,8 @@
 				AD07B4582D7F4376000AE675 /* AWSCognitoAuthPlugin */,
 				AD07B45B2D7F44D7000AE675 /* Authenticator */,
 				AD07B4632D7F8C12000AE675 /* AWSAPIPlugin */,
+				AD820AA42D7FDD93003EBB75 /* Collections */,
+				AD820AA62D7FDD93003EBB75 /* OrderedCollections */,
 			);
 			productName = JLDanceParty;
 			productReference = AD07B4192D7F3549000AE675 /* Amps.app */;
@@ -213,6 +217,7 @@
 			packageReferences = (
 				AD07B4572D7F4376000AE675 /* XCRemoteSwiftPackageReference "amplify-swift" */,
 				AD07B45A2D7F44D7000AE675 /* XCRemoteSwiftPackageReference "amplify-ui-swift-authenticator" */,
+				AD820AA32D7FDD93003EBB75 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AD07B41A2D7F3549000AE675 /* Products */;
@@ -415,7 +420,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"JLDanceParty/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Amps/Preview Content\"";
 				DEVELOPMENT_TEAM = 8F88874PAF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -444,7 +449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"JLDanceParty/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Amps/Preview Content\"";
 				DEVELOPMENT_TEAM = 8F88874PAF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -596,6 +601,14 @@
 				minimumVersion = 1.2.3;
 			};
 		};
+		AD820AA32D7FDD93003EBB75 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -613,6 +626,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AD07B4572D7F4376000AE675 /* XCRemoteSwiftPackageReference "amplify-swift" */;
 			productName = AWSAPIPlugin;
+		};
+		AD820AA42D7FDD93003EBB75 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD820AA32D7FDD93003EBB75 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		AD820AA62D7FDD93003EBB75 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD820AA32D7FDD93003EBB75 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

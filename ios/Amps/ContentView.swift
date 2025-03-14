@@ -11,7 +11,7 @@ import Authenticator
 
 struct ContentView: View {
     
-    @StateObject var vm = TodoViewModel()
+    @State var vm = TodoViewModel()
     
     var body: some View {
         Authenticator { state in
@@ -24,13 +24,15 @@ struct ContentView: View {
                 
                 List {
                     ForEach($vm.todos, id: \.id) { todo in
-                        TodoRow(vm: vm, todo: todo)
+                        TodoRow(todo: todo)
+                            .environment(vm)
                     }
                     .onDelete { indexSet in
                         Task { await vm.deleteTodos(indexSet: indexSet) }
                     }
                 }
                 .task {
+                    vm.subscribe()
                     await vm.listTodos()
                 }
                 Button(action: {
