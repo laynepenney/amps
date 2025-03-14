@@ -154,6 +154,7 @@ struct Subscription {
         self.subscription = Amplify.API.subscribe(request: request)
     }
     
+    @discardableResult
     mutating func subscribe(_ callback: @escaping (Todo)async ->Void) -> Task<Void, Error> {
         if let task = self.task {
             return task
