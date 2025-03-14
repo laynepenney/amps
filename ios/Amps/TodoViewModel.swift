@@ -12,7 +12,7 @@ import OrderedCollections
 @MainActor
 @Observable
 class TodoViewModel {
-    var todos: [Todo] = []
+    var todos: ArraySlice<Todo> = []
     private var _data: OrderedSet<Todo> = []
     
     private var onCreate = Subscription(.onCreate)
@@ -41,7 +41,7 @@ class TodoViewModel {
             case .success(let todo):
                 print("Successfully created todo: \(todo)")
                 self._data.updateOrAppend(todo)
-                self.todos = self._data.elements
+                self.todos = self._data.elements[...]
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
@@ -54,12 +54,23 @@ class TodoViewModel {
     
     private func update(_ todo: Todo) async {
         self._data.updateOrAppend(todo)
-        self.todos = self._data.elements
+        self.todos = self._data.elements[...]
     }
     
     private func remove(_ todo: Todo) async {
+        // TODO: determine how to handle case where removing last element causes index out of bounds fatal error
+        // make a copy
+//        var copy = self._data.elements
+//        let begin = copy.startIndex
+//        let end = copy.endIndex-1
+//        let found = copy.firstIndex(of: todo)
+//        if found == end {
+//            self.todos = Array(copy[begin..<end])
+//            self._data = OrderedSet(self.todos)
+//            return
+//        }
         self._data.remove(todo)
-        self.todos = self._data.elements
+        self.todos = self._data.elements[...]
     }
     
     func subscribe() {
@@ -82,7 +93,7 @@ class TodoViewModel {
             case .success(let todos):
                 print("Successfully retrieved list of todos: \(todos)")
                 self._data = OrderedSet(todos)
-                self.todos = self._data.elements
+                self.todos = self._data.elements[...]
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
@@ -102,7 +113,7 @@ class TodoViewModel {
                 case .success(let todo):
                     print("Successfully deleted todo: \(todo)")
                     self._data.remove(todo)
-                    self.todos = self._data.elements
+                    self.todos = self._data.elements[...]
                 case .failure(let error):
                     print("Got failed result with \(error.errorDescription)")
                 }
@@ -121,7 +132,7 @@ class TodoViewModel {
             case .success(let todo):
                 print("Successfully updated todo: \(todo)")
                 self._data.updateOrAppend(todo)
-                self.todos = self._data.elements
+                self.todos = self._data.elements[...]
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
