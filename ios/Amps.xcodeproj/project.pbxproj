@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD07B4562D7F3740000AE675 /* amplify_outputs.json in Resources */ = {isa = PBXBuildFile; fileRef = AD07B4552D7F3740000AE675 /* amplify_outputs.json */; };
+		AD07B4592D7F4376000AE675 /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B4582D7F4376000AE675 /* AWSCognitoAuthPlugin */; };
+		AD07B45C2D7F44D7000AE675 /* Authenticator in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B45B2D7F44D7000AE675 /* Authenticator */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD07B42A2D7F354B000AE675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD07B4112D7F3549000AE675 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD07B4182D7F3549000AE675;
+			remoteInfo = JLDanceParty;
+		};
+		AD07B4342D7F354B000AE675 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD07B4112D7F3549000AE675 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD07B4182D7F3549000AE675;
+			remoteInfo = JLDanceParty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD07B4192D7F3549000AE675 /* Amps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD07B4292D7F354B000AE675 /* AmpsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmpsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD07B4332D7F354B000AE675 /* AmpsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmpsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD07B4552D7F3740000AE675 /* amplify_outputs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = amplify_outputs.json; path = ../amplify_outputs.json; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AD07B41B2D7F3549000AE675 /* Amps */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Amps;
+			sourceTree = "<group>";
+		};
+		AD07B42C2D7F354B000AE675 /* AmpsTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AmpsTests;
+			sourceTree = "<group>";
+		};
+		AD07B4362D7F354B000AE675 /* AmpsUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AmpsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD07B4162D7F3549000AE675 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD07B45C2D7F44D7000AE675 /* Authenticator in Frameworks */,
+				AD07B4592D7F4376000AE675 /* AWSCognitoAuthPlugin in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD07B4262D7F354B000AE675 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD07B4302D7F354B000AE675 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD07B4102D7F3549000AE675 = {
+			isa = PBXGroup;
+			children = (
+				AD07B41B2D7F3549000AE675 /* Amps */,
+				AD07B42C2D7F354B000AE675 /* AmpsTests */,
+				AD07B4362D7F354B000AE675 /* AmpsUITests */,
+				AD07B41A2D7F3549000AE675 /* Products */,
+				AD07B4552D7F3740000AE675 /* amplify_outputs.json */,
+			);
+			sourceTree = "<group>";
+		};
+		AD07B41A2D7F3549000AE675 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD07B4192D7F3549000AE675 /* Amps.app */,
+				AD07B4292D7F354B000AE675 /* AmpsTests.xctest */,
+				AD07B4332D7F354B000AE675 /* AmpsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD07B4182D7F3549000AE675 /* Amps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD07B43D2D7F354B000AE675 /* Build configuration list for PBXNativeTarget "Amps" */;
+			buildPhases = (
+				AD07B4152D7F3549000AE675 /* Sources */,
+				AD07B4162D7F3549000AE675 /* Frameworks */,
+				AD07B4172D7F3549000AE675 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AD07B41B2D7F3549000AE675 /* Amps */,
+			);
+			name = Amps;
+			packageProductDependencies = (
+				AD07B4582D7F4376000AE675 /* AWSCognitoAuthPlugin */,
+				AD07B45B2D7F44D7000AE675 /* Authenticator */,
+			);
+			productName = JLDanceParty;
+			productReference = AD07B4192D7F3549000AE675 /* Amps.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD07B4282D7F354B000AE675 /* AmpsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD07B4402D7F354B000AE675 /* Build configuration list for PBXNativeTarget "AmpsTests" */;
+			buildPhases = (
+				AD07B4252D7F354B000AE675 /* Sources */,
+				AD07B4262D7F354B000AE675 /* Frameworks */,
+				AD07B4272D7F354B000AE675 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD07B42B2D7F354B000AE675 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AD07B42C2D7F354B000AE675 /* AmpsTests */,
+			);
+			name = AmpsTests;
+			packageProductDependencies = (
+			);
+			productName = JLDancePartyTests;
+			productReference = AD07B4292D7F354B000AE675 /* AmpsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD07B4322D7F354B000AE675 /* AmpsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD07B4432D7F354B000AE675 /* Build configuration list for PBXNativeTarget "AmpsUITests" */;
+			buildPhases = (
+				AD07B42F2D7F354B000AE675 /* Sources */,
+				AD07B4302D7F354B000AE675 /* Frameworks */,
+				AD07B4312D7F354B000AE675 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD07B4352D7F354B000AE675 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AD07B4362D7F354B000AE675 /* AmpsUITests */,
+			);
+			name = AmpsUITests;
+			packageProductDependencies = (
+			);
+			productName = JLDancePartyUITests;
+			productReference = AD07B4332D7F354B000AE675 /* AmpsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD07B4112D7F3549000AE675 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					AD07B4182D7F3549000AE675 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					AD07B4282D7F354B000AE675 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = AD07B4182D7F3549000AE675;
+					};
+					AD07B4322D7F354B000AE675 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = AD07B4182D7F3549000AE675;
+					};
+				};
+			};
+			buildConfigurationList = AD07B4142D7F3549000AE675 /* Build configuration list for PBXProject "Amps" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD07B4102D7F3549000AE675;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AD07B4572D7F4376000AE675 /* XCRemoteSwiftPackageReference "amplify-swift" */,
+				AD07B45A2D7F44D7000AE675 /* XCRemoteSwiftPackageReference "amplify-ui-swift-authenticator" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = AD07B41A2D7F3549000AE675 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD07B4182D7F3549000AE675 /* Amps */,
+				AD07B4282D7F354B000AE675 /* AmpsTests */,
+				AD07B4322D7F354B000AE675 /* AmpsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD07B4172D7F3549000AE675 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD07B4562D7F3740000AE675 /* amplify_outputs.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD07B4272D7F354B000AE675 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD07B4312D7F354B000AE675 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD07B4152D7F3549000AE675 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD07B4252D7F354B000AE675 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD07B42F2D7F354B000AE675 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD07B42B2D7F354B000AE675 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD07B4182D7F3549000AE675 /* Amps */;
+			targetProxy = AD07B42A2D7F354B000AE675 /* PBXContainerItemProxy */;
+		};
+		AD07B4352D7F354B000AE675 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD07B4182D7F3549000AE675 /* Amps */;
+			targetProxy = AD07B4342D7F354B000AE675 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AD07B43B2D7F354B000AE675 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD07B43C2D7F354B000AE675 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD07B43E2D7F354B000AE675 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JLDanceParty/Preview Content\"";
+				DEVELOPMENT_TEAM = 8F88874PAF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = party.jldance.JLDanceParty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD07B43F2D7F354B000AE675 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JLDanceParty/Preview Content\"";
+				DEVELOPMENT_TEAM = 8F88874PAF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = party.jldance.JLDanceParty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD07B4412D7F354B000AE675 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8F88874PAF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = party.jldance.JLDancePartyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Amps.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Amps";
+			};
+			name = Debug;
+		};
+		AD07B4422D7F354B000AE675 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8F88874PAF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = party.jldance.JLDancePartyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Amps.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Amps";
+			};
+			name = Release;
+		};
+		AD07B4442D7F354B000AE675 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8F88874PAF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = party.jldance.JLDancePartyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JLDanceParty;
+			};
+			name = Debug;
+		};
+		AD07B4452D7F354B000AE675 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8F88874PAF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = party.jldance.JLDancePartyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JLDanceParty;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD07B4142D7F3549000AE675 /* Build configuration list for PBXProject "Amps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD07B43B2D7F354B000AE675 /* Debug */,
+				AD07B43C2D7F354B000AE675 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD07B43D2D7F354B000AE675 /* Build configuration list for PBXNativeTarget "Amps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD07B43E2D7F354B000AE675 /* Debug */,
+				AD07B43F2D7F354B000AE675 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD07B4402D7F354B000AE675 /* Build configuration list for PBXNativeTarget "AmpsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD07B4412D7F354B000AE675 /* Debug */,
+				AD07B4422D7F354B000AE675 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD07B4432D7F354B000AE675 /* Build configuration list for PBXNativeTarget "AmpsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD07B4442D7F354B000AE675 /* Debug */,
+				AD07B4452D7F354B000AE675 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD07B4572D7F4376000AE675 /* XCRemoteSwiftPackageReference "amplify-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.46.0;
+			};
+		};
+		AD07B45A2D7F44D7000AE675 /* XCRemoteSwiftPackageReference "amplify-ui-swift-authenticator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-ui-swift-authenticator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD07B4582D7F4376000AE675 /* AWSCognitoAuthPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD07B4572D7F4376000AE675 /* XCRemoteSwiftPackageReference "amplify-swift" */;
+			productName = AWSCognitoAuthPlugin;
+		};
+		AD07B45B2D7F44D7000AE675 /* Authenticator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD07B45A2D7F44D7000AE675 /* XCRemoteSwiftPackageReference "amplify-ui-swift-authenticator" */;
+			productName = Authenticator;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AD07B4112D7F3549000AE675 /* Project object */;
+}
