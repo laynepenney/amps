@@ -23,15 +23,19 @@ struct ContentView: View {
                 }
                 
                 List {
-                    ForEach($vm.todos, id: \.id) { todo in
-                        TodoRow(todo: todo)
-                            .environment(vm)
+                    ForEach($vm.todos) { todo in
+                        let value = todo.wrappedValue
+                        TodoRow(id: value.id, content: value.content, isDone: todo.isDone)
+                          .environment(vm)
                     }
                     .onDelete { indexSet in
                         Task { await vm.deleteTodos(indexSet: indexSet) }
                     }
-                }
-                .task {
+                }.refreshable {
+                    await vm.listTodos()
+                }.onChange(of: vm.todos) { oldValue, newValue in
+                    print("onChange: \(oldValue) -> \(newValue)")
+                }.task {
                     vm.subscribe()
                     await vm.listTodos()
                 }

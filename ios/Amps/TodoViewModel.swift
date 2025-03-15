@@ -12,8 +12,7 @@ import OrderedCollections
 @MainActor
 @Observable
 class TodoViewModel {
-    var todos: ArraySlice<Todo> = []
-    private var _data: OrderedSet<Todo> = []
+    var todos: Array<Todo> = []
     
     private var onCreate = Subscription(.onCreate)
     private var onDelete = Subscription(.onDelete)
@@ -40,8 +39,7 @@ class TodoViewModel {
             switch result {
             case .success(let todo):
                 print("Successfully created todo: \(todo)")
-                self._data.updateOrAppend(todo)
-                self.todos = self._data.elements[...]
+                await self.update(todo)
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
@@ -53,24 +51,37 @@ class TodoViewModel {
     }
     
     private func update(_ todo: Todo) async {
-        self._data.updateOrAppend(todo)
-        self.todos = self._data.elements[...]
+        guard let index = self.todos.firstIndex(where: { test in todo.id == test.id }) else {
+            self.todos.append(todo)
+            return
+        }
+        
+        self.todos[index] = todo
     }
     
     private func remove(_ todo: Todo) async {
         // TODO: determine how to handle case where removing last element causes index out of bounds fatal error
         // make a copy
-//        var copy = self._data.elements
+//        let copy = self.todos
 //        let begin = copy.startIndex
 //        let end = copy.endIndex-1
 //        let found = copy.firstIndex(of: todo)
 //        if found == end {
-//            self.todos = Array(copy[begin..<end])
-//            self._data = OrderedSet(self.todos)
+//            self.todos.insert(self.todos.remove(at: begin), at: begin)
+////            self.todos.append(todo)
+//            self.todos.remove(at: end)
+//            
+//            
+////            self.todos = Array(copy[begin..<end])
+////            self._data = OrderedSet(self.todos)
+//            self._data = OrderedSet(copy[..<end])
 //            return
 //        }
-        self._data.remove(todo)
-        self.todos = self._data.elements[...]
+        guard let index = self.todos.firstIndex(where: { test in todo.id == test.id }) else {
+            return
+        }
+        
+        self.todos.remove(at: index)
     }
     
     func subscribe() {
@@ -92,8 +103,7 @@ class TodoViewModel {
             switch result {
             case .success(let todos):
                 print("Successfully retrieved list of todos: \(todos)")
-                self._data = OrderedSet(todos)
-                self.todos = self._data.elements[...]
+                self.todos = Array(todos)
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
@@ -112,8 +122,7 @@ class TodoViewModel {
                 switch result {
                 case .success(let todo):
                     print("Successfully deleted todo: \(todo)")
-                    self._data.remove(todo)
-                    self.todos = self._data.elements[...]
+                    await self.remove(todo)
                 case .failure(let error):
                     print("Got failed result with \(error.errorDescription)")
                 }
@@ -131,8 +140,7 @@ class TodoViewModel {
             switch result {
             case .success(let todo):
                 print("Successfully updated todo: \(todo)")
-                self._data.updateOrAppend(todo)
-                self.todos = self._data.elements[...]
+                await self.update(todo)
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
@@ -147,10 +155,18 @@ class TodoViewModel {
 extension Todo: Hashable, Equatable {
     public static func == (lhs: Todo, rhs: Todo) -> Bool {
         return lhs.id == rhs.id
+        && lhs.content == rhs.content
+        && lhs.isDone == rhs.isDone
     }
     public func hash(into hasher: inout Hasher) {
         hasher.combine(self.id)
+        hasher.combine(self.content)
+        hasher.combine(self.isDone)
     }
+}
+
+extension Todo: Identifiable {
+    public typealias ID = String
 }
 
 @MainActor
