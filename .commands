@@ -1,8 +1,14 @@
+# aws login
+aws sso login
+
 # run web local
 npm run dev web
 
 # gen sandbox amplify_outputs.json
 npx ampx sandbox
 
-# swift codegen
+# ios codegen
 npx ampx generate graphql-client-code --format modelgen --model-target swift --out ios/Amps
+
+# android codegen
+npx ampx generate graphql-client-code --format modelgen --model-target java --out android/app/src/main/java

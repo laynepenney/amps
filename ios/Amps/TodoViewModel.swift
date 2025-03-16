@@ -7,12 +7,12 @@
 
 import SwiftUI
 import Amplify
-import OrderedCollections
+import DequeModule
 
 @MainActor
 @Observable
 class TodoViewModel {
-    var todos: Array<Todo> = []
+    var todos: Deque<Todo> = []
     
     private var onCreate = Subscription(.onCreate)
     private var onDelete = Subscription(.onDelete)
@@ -103,7 +103,7 @@ class TodoViewModel {
             switch result {
             case .success(let todos):
                 print("Successfully retrieved list of todos: \(todos)")
-                self.todos = Array(todos)
+                self.todos = Deque(todos)
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }

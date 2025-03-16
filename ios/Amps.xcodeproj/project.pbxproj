@@ -12,6 +12,8 @@
 		AD07B45C2D7F44D7000AE675 /* Authenticator in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B45B2D7F44D7000AE675 /* Authenticator */; };
 		AD07B4642D7F8C12000AE675 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = AD07B4632D7F8C12000AE675 /* AWSAPIPlugin */; };
 		AD820AA72D7FDD93003EBB75 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = AD820AA62D7FDD93003EBB75 /* OrderedCollections */; };
+		ADCF937E2D85E19F00188A93 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = AD820AA42D7FDD93003EBB75 /* Collections */; };
+		ADCF93992D85F6E600188A93 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = ADCF93982D85F6E600188A93 /* DequeModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +63,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCF937E2D85E19F00188A93 /* Collections in Frameworks */,
 				AD820AA72D7FDD93003EBB75 /* OrderedCollections in Frameworks */,
 				AD07B4642D7F8C12000AE675 /* AWSAPIPlugin in Frameworks */,
 				AD07B45C2D7F44D7000AE675 /* Authenticator in Frameworks */,
 				AD07B4592D7F4376000AE675 /* AWSCognitoAuthPlugin in Frameworks */,
+				ADCF93992D85F6E600188A93 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,7 @@
 				AD07B4632D7F8C12000AE675 /* AWSAPIPlugin */,
 				AD820AA42D7FDD93003EBB75 /* Collections */,
 				AD820AA62D7FDD93003EBB75 /* OrderedCollections */,
+				ADCF93982D85F6E600188A93 /* DequeModule */,
 			);
 			productName = JLDanceParty;
 			productReference = AD07B4192D7F3549000AE675 /* Amps.app */;
@@ -636,6 +641,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AD820AA32D7FDD93003EBB75 /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = OrderedCollections;
+		};
+		ADCF93982D85F6E600188A93 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD820AA32D7FDD93003EBB75 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
