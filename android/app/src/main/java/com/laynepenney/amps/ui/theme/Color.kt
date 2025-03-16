@@ -1,4 +1,4 @@
-package com.laynepenney.Amps.ui.theme
+package com.laynepenney.amps.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.laynepenney.Amps"
+    namespace = "com.laynepenney.amps"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.laynepenney.Amps"
+        applicationId = "com.laynepenney.amps"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -28,6 +28,8 @@ android {
         }
     }
     compileOptions {
+        // Support for Java 8 features
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -40,7 +42,8 @@ android {
 }
 
 dependencies {
-
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
+    implementation(libs.authenticator)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

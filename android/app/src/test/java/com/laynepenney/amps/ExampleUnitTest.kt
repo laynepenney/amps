@@ -1,4 +1,4 @@
-package com.laynepenney.Amps
+package com.laynepenney.amps
 
 import org.junit.Test
 

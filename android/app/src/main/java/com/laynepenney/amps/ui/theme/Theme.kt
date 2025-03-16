@@ -1,6 +1,5 @@
-package com.laynepenney.Amps.ui.theme
+package com.laynepenney.amps.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
